@@ -13,7 +13,6 @@ import { LoadLoggedUser } from './core/Auth/AuthAction';
 export class AppComponent {
   title = 'RecycleHub';
   constructor(private store:Store){
-    this.store.dispatch(LoadDemands());
     this.store.dispatch(LoadLoggedUser());
   }
 }

@@ -57,6 +57,7 @@ export class AuthEffect{
                     this.authservice.getLoggedUser().pipe(
                         map((utilisateur) => {
                             if(utilisateur){
+                                console.log("here");
                                 return LoadLoggedUserSuccess({utilisateur})
                             }else{
                                 return LoadLoggedUserFailure({error:'No user found'})

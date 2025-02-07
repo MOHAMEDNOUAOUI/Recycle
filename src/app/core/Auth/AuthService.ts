@@ -34,7 +34,7 @@ export class AuthService {
     getLoggedUser() : Observable<Utilisateur | null> {
         const user = localStorage.getItem('loggedUser');
         if(user){
-            return of(JSON.parse(user) as Utilisateur)
+            return of(JSON.parse(user))
         }
 
         return of(null);

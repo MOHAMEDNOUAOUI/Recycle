@@ -21,17 +21,5 @@ export const authGuard: CanActivateFn = (route,state) => {
 };
 
 export const collectorGuard: CanActivateFn = (route, state) => {
-  const store = inject(Store);
-  const router = inject(Router);
-  const authService = inject(AuthService);
-
-    const user = authService.getLoggedUser();
-
-    user.subscribe((user) => {
-      if(user?.role == 1){
-        router.navigate(['/Particulier'])
-        return false;
-      }
-    })
-  return false;
+  return true;
 };

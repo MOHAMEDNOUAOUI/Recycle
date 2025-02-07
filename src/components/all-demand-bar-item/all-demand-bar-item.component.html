@@ -1,3 +1,6 @@
-<div class="h-full w-fit font-Roboto relative top-[0.02rem] rounded-tr-lg rounded-tl-lg bg-white px-4 text-center text-black flex justify-center items-center border-gray-300  border-r border-l border-t">
+<div 
+(click)="changeTable()" 
+[ngClass]="active==text ? 'bg-white border-gray-300  border-r border-l border-t' : ''" 
+class="h-full cursor-pointer w-fit font-Roboto relative top-[0.02rem] rounded-tr-lg rounded-tl-lg px-4 text-center text-black flex justify-center items-center">
     {{text}}
 </div>

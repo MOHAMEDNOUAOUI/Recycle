@@ -11,6 +11,7 @@ export interface Utilisateur {
     email?:String
     password?:String
     adress?:String
+    city?:string
     phone?:String
     birthday?:String
     profile:File
@@ -25,6 +26,7 @@ export interface DemandeResponseUtilisateur {
     email?:String
     password?:String
     adress?:String
+    city?:string
     phone?:String
     birthday?:String
     profile:File

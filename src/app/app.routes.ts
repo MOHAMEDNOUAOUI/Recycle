@@ -6,17 +6,24 @@ import { LoginPageComponent } from '../pages/login-page/login-page.component';
 import { HomePageComponent } from '../pages/home-page/home-page.component';
 import { RecycleLayoutComponent } from '../Layouts/recycle-layout/recycle-layout.component';
 import { FakeData } from './core/fakedata/FakeData';
-import { authGuard, roleGuard } from './core/guards/auth-guard.guard';
+import { authGuard } from './core/guards/auth-guard.guard';
+import { ProfilePageComponent } from '../pages/profile-page/profile-page.component';
+import { ProfileLayoutComponent } from '../Layouts/profile-layout/profile-layout.component';
 
 export const routes: Routes = [
     {path:'' , component:CollectorLayoutComponent ,
-        canActivate:[authGuard , roleGuard], 
+        canActivate:[authGuard], 
     children:[
         {path:'' , component:HomePageComponent}
     ]
     },
-    {path:'Particulier' , component:ParticulierLayoutComponent , canActivate:[authGuard , roleGuard], },
-    {path:'register' , component:RegisterPageComponent , canActivate:[roleGuard]},
-    {path:'login' ,component:LoginPageComponent , canActivate:[roleGuard]},
+    {path:'Particulier' , component:ParticulierLayoutComponent, },
+    {path:'register' , component:RegisterPageComponent },
+    {path:'login' ,component:LoginPageComponent},
     {path:'data' , component:FakeData},
+    {path:'profile' , component:ProfileLayoutComponent , canActivate:[authGuard],
+        children:[
+            {path:'' , component:ProfilePageComponent},
+        ]
+    }
 ];

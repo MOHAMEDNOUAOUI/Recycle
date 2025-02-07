@@ -1,4 +1,4 @@
 <div class="w-full ps-10 h-12 border-b border-gray-300 flex gap-3">
-    <app-all-demand-bar-item text="All Demandes"></app-all-demand-bar-item>
-    <app-all-demand-bar-item text="Yours"></app-all-demand-bar-item>
+    <app-all-demand-bar-item (emmitchangement)="setActive($event)" [active]="active"  text="All Demandes"></app-all-demand-bar-item>
+    <app-all-demand-bar-item (emmitchangement)="setActive($event)" [active]="active" [ngClass]="" text="Yours"></app-all-demand-bar-item>
 </div>

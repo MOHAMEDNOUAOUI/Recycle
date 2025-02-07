@@ -23,6 +23,7 @@ export interface Demande {
     waste:Demande_Waste[]
     pictures:File[]
     poids:number | 0
+    city:string
     collect_adress:String
     date:Date
     statut:Statut
