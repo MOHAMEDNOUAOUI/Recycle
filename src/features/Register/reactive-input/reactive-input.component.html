@@ -1,0 +1,10 @@
+<div class="w-full flex flex-col gap-2">
+    <label class="font-Roboto text-gray-700" [for]="text">{{ text }}</label>
+    <input 
+        ((input))="onInput($event)" 
+        class="p-2 rounded-md border-gray-300 border" 
+        [placeholder]="'Enter your ' + text"  
+        [type]="type" 
+        [name]="text" 
+        [id]="text">
+</div> 

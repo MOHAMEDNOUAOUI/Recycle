@@ -1,0 +1,46 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit($event)" class="w-full h-full flex flex-col gap-2">
+    <div class="flex w-full gap-2 justify-between">
+      <div class="w-full flex flex-col gap-2">
+        <label class="font-Roboto text-gray-700" for="firstname">Firstname</label>
+        <input formControlName="firstname" class="p-2 rounded-md border-gray-300 border" placeholder="Enter your Firstname" type="text" id="firstname">
+        <span *ngIf="submitted && registerForm.get('firstname')?.errors?.['required']" class="text-red-500">Firstname is required.</span>
+        <span *ngIf="submitted && registerForm.get('firstname')?.errors?.['minlength']" class="text-red-500">Minimum 2 characters required.</span>
+      </div>
+  
+      <div class="w-full flex flex-col gap-2">
+        <label class="font-Roboto text-gray-700" for="lastname">Lastname</label>
+        <input formControlName="lastname" class="p-2 rounded-md border-gray-300 border" placeholder="Enter your Lastname" type="text" id="lastname">
+        <span *ngIf="submitted && registerForm.get('lastname')?.errors?.['required']" class="text-red-500">Lastname is required.</span>
+      </div>
+    </div>
+  
+    <div class="w-full flex flex-col gap-2">
+      <label class="font-Roboto text-gray-700" for="email">Email</label>
+      <input formControlName="email" class="p-2 rounded-md border-gray-300 border" placeholder="Enter your Email" type="text" id="email">
+      <span *ngIf="submitted && registerForm.get('email')?.errors?.['required']" class="text-red-500">Email is required.</span>
+      <span *ngIf="submitted && registerForm.get('email')?.errors?.['email']" class="text-red-500">Invalid email format.</span>
+    </div>
+  
+    <div class="w-full flex flex-col gap-2">
+      <label class="font-Roboto text-gray-700" for="password">Password</label>
+      <input formControlName="password" class="p-2 rounded-md border-gray-300 border" placeholder="Enter your Password" type="password" id="password">
+      <span *ngIf="submitted && registerForm.get('password')?.errors?.['required']" class="text-red-500">Password is required.</span>
+      <span *ngIf="submitted && registerForm.get('password')?.errors?.['minlength']" class="text-red-500">Minimum 6 characters required.</span>
+    </div>
+
+    <div class="flex w-full gap-2 justify-between">
+      <div class="w-full flex flex-col gap-2">
+        <label class="font-Roboto text-gray-700" for="address">Address</label>
+        <input formControlName="address" class="p-2 rounded-md border-gray-300 border" placeholder="Enter your Address" type="text" id="address">
+        <span *ngIf="submitted && registerForm.get('address')?.errors?.['required']" class="text-red-500">Address is required.</span>
+      </div>
+      <div class="w-full flex flex-col gap-2">
+        <label class="font-Roboto text-gray-700" for="phone">Phone</label>
+        <input formControlName="phone" class="p-2 rounded-md border-gray-300 border" placeholder="Enter your Phone" type="text" id="phone">
+        <span *ngIf="submitted && registerForm.get('phone')?.errors?.['required']" class="text-red-500">Address is required.</span>
+      </div>
+    </div>
+  
+    <button type="submit" class="bg-primary mt-3 cursor-pointer text-white px-4 py-2 rounded-md">Submit</button>
+  </form>
+  

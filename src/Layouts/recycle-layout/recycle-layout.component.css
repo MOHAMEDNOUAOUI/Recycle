@@ -1,0 +1,16 @@
+.overlay {
+    animation: overlay 1000s ease-in-out;
+}
+
+.recyclepage {
+    animation: overlay 1000s ease-in-out;
+}
+
+@keyframes overlay {
+    0%{
+        bottom: -100vh;
+    }
+    100%{
+        bottom: 0;
+    }
+}

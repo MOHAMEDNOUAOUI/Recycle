@@ -1,0 +1,48 @@
+<div class="w-full h-[80vh]">
+    <table class="w-full border text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+    <thead class="text-xs border text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <tr>
+            <th scope="col" class="px-6 py-3">Id</th>
+            <th scope="col" class="border px-6 py-3">Username</th>
+            <th scope="col" class="border px-6 py-3">Email</th>
+            <th scope="col" class="border px-6 py-3">collect-address</th>
+            <th scope="col" class="border px-6 py-3">poids</th>
+            <th scope="col" class="border px-6 py-3">Statut</th>
+            <th scope="col" class="border px-6 py-3">Date</th>
+            <th scope="col" class="px-6 py-3">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let demande of (Demandes$ | async)" class="cursor-pointer hover:bg-gray-100 transition-all ease-in-out duration-300 bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
+            <td class="px-6 py-4">
+                -
+            </td>
+            <td class="px-6 py-4">
+                {{demande.owner.firstname}}
+            </td>
+            <td class="px-6 py-4">
+                {{demande.owner.email}}
+            </td>
+            <td class="px-6 py-4">
+                {{demande.collect_adress}}
+            </td>
+            <td class="px-6 py-4">
+                {{demande.poids}} Kg
+            </td>
+            <td class="px-6 py-4">
+                <div [ngClass]="color(demande.statut)" class="rounded-lg p-2 text-white font-Roboto font-bold">
+                    {{Statut[demande.statut]}}
+                </div>
+            </td>
+            <td class="px-6 py-4">
+                {{demande.date}}
+            </td>
+            <td class="px-6 py-4 text-center">
+                ***
+            </td>
+    
+        </tr>
+    </tbody>
+    </table>
+</div>
+

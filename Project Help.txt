@@ -1,0 +1,31 @@
+Particulier : 
+	- inscription only for particulier ,
+	- Informations in PDF
+	-les collecteurs doivent etre enregistrer dans localStorage
+	- Modification Du donner de lutilisateur
+	- soumet une demande : Data du demande sur PDF
+	- statut de la demande est par defaut 'en attente' 
+	- peut consulter la list de ses demandes ,modifier , supprimer , just les dmandes ayant le statut 'en 			attente'
+	- peut regrouper plusieur type de déchets 
+	- max des demandes sont 3 , au cas du statu non encore 'valide ' ou 'rejete' , means can make 3 max in case 		they were not validated , 
+	- total des collect doit etre max 10kg
+
+Collecteur : 
+	- peut modifier le statu de la demande 
+	- choisir les demandes en attente
+	- collecteur , doit verifier les type de materieux , Pese et valide le poids , prend des photos , valider 	la transaction dans le platform si cest correct sinon ca sera rejete
+	- collecteur ne peut visioner quela list des demandes provenant de sa meme ville
+	
+
+Système de Points :
+	Attribution automatique après validation de la collecte selon le barème suivant :
+	● Plastique : 2 points/kg
+	● Verre : 1 point/kg
+	● Papier : 1 point/kg
+	● Métal : 5 points/kg
+		Conversion (à la demande du particulier) des points possible en :
+	● 100 points = bon d'achat de 50 Dh
+	● 200 points = bon d'achat de 120 Dh
+	● 500 points = bon d'achat de 350 Dh
+
+

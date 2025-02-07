@@ -1,0 +1,18 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit($event)" class="w-full h-full flex flex-col gap-2">
+   
+    <div class="w-full flex flex-col gap-2">
+        <label class="font-Roboto text-gray-700" for="email">Email</label>
+        <input formControlName="email" class="p-2 rounded-md border-gray-300 border" placeholder="Enter your Email" type="email" id="email">
+        <span *ngIf="submitted && loginForm.get('email')?.errors?.['required']" class="text-red-500">Email is required.</span>
+        <span *ngIf="submitted && loginForm.get('email')?.errors?.['email']" class="text-red-500">Invalid email format.</span>
+      </div>
+    
+      <div class="w-full flex flex-col gap-2">
+        <label class="font-Roboto text-gray-700" for="password">Password</label>
+        <input formControlName="password" class="p-2 rounded-md border-gray-300 border" placeholder="Enter your Password" type="password" id="password">
+        <span *ngIf="submitted && loginForm.get('password')?.errors?.['required']" class="text-red-500">Password is required.</span>
+        <span *ngIf="submitted && loginForm.get('password')?.errors?.['minlength']" class="text-red-500">Minimum 6 characters required.</span>
+      </div>
+    <button type="submit" class="bg-primary mt-3 cursor-pointer text-white px-4 py-2 rounded-md">Sign in</button>
+ </form>
+ 
